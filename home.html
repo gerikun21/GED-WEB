@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #02b7ff;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      text-align: center;
+    }
+    h1 {
+      color: #333;
+    }
+    .form-container {
+      margin-top: 20px;
+    }
+    .form-container input, .form-container select {
+      margin: 10px 0;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #45a049;
+    }
+    .form-container button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      background-color: #4CAF50;
+      color: rgb(0, 0, 0);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .form-container button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Selamat Datang Di GED WEB</h1>
+    <div class="form-container">
+      <form id="loginForm">
+        <input type="text" id="name" placeholder="Nama" required>
+        <select id="gender" required>
+          <option value="" disabled selected>Pilih Jenis Kelamin</option>
+          <option value="male">Laki-laki</option>
+          <option value="female">Perempuan</option>
+        </select>
+        <input type="number" id="age" placeholder="Umur" required>
+        <button type="submit">Mulai</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("loginForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      var name = document.getElementById("name").value;
+      var gender = document.getElementById("gender").value;
+      var age = document.getElementById("age").value;
+
+      // Simpan data pengguna di local storage
+      localStorage.setItem("name", name);
+      localStorage.setItem("gender", gender);
+      localStorage.setItem("age", age);
+
+      // Arahkan pengguna ke halaman utama
+      window.location.href = "index.html";
+    });
+  </script>
+</body>
+</html>

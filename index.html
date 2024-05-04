@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Halaman Awal</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #ffc0cb;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      text-align: center;
+    }
+    h1 {
+      color: #333;
+    }
+    .options {
+      margin-top: 20px;
+    }
+    .options a {
+      display: block;
+      margin: 10px 0;
+      padding: 10px 20px;
+      background-color: #00eeff;
+      color: rgb(0, 0, 0);
+      text-decoration: none;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .options a:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Selamat Datang, <span id="userName"></span>!</h1>
+    <div class="options">
+      <a href="encrypt.html">Enkripsi Pesan</a>
+      <a href="decrypt.html">Dekripsi Pesan</a>
+      <a href="biodata.html">Bio</a>
+      <a href="about.html">About</a> <!-- Tambah link menuju about.html -->
+    </div>
+  </div>
+
+  <script>
+    // Ambil nama pengguna dari local storage
+    var userName = localStorage.getItem("name");
+
+    // Tampilkan nama pengguna di halaman
+    document.getElementById("userName").innerText = userName;
+  </script>
+</body>
+</html>
